@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OtmsModuleApplication {
+public class OtmsQuestionModuleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OtmsModuleApplication.class, args);
+		SpringApplication.run(OtmsQuestionModuleApplication.class, args);
 	}
 
 }

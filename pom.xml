@@ -8,10 +8,10 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.capg</groupId>
-	<artifactId>otms-module</artifactId>
+	<groupId>com.capg.otms</groupId>
+	<artifactId>otms-question-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>otms-module</name>
+	<name>otms-question-module</name>
 	<description>OTMS project for Spring Boot</description>
 
 	<properties>
