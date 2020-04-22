@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.capg.otms</groupId>
-	<artifactId>otms-add-test</artifactId>
+	<artifactId>otms-add-and-assign-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>otms-add-test</name>
+	<name>otms-add-and-assign-test</name>
 	<description>Place Order Module</description>
 
 	<properties>

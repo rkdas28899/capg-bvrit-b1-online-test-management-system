@@ -1,13 +1,13 @@
-package com.capg.otms.addtest;
+package com.capg.otms.addandassigntest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OtmsAddTestApplication {
+public class OtmsAddAndAssignTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OtmsAddTestApplication.class, args);
+		SpringApplication.run(OtmsAddAndAssignTestApplication.class, args);
 	}
 
 }

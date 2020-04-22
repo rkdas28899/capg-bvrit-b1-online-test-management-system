@@ -1,10 +1,10 @@
-package com.capg.otms.addtest;
+package com.capg.otms.addandassigntest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OtmsAddTestApplicationTests {
+class OtmsAddAndAssignTestApplicationTests {
 
 	@Test
 	void contextLoads() {
