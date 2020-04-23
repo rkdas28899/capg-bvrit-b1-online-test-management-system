@@ -1,4 +1,4 @@
-package com.capg.otms.model;
+package com.capg.otms.question.model;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
