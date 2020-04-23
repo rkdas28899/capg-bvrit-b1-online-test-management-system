@@ -6,9 +6,9 @@
 -done by rkdas28899
 
 # otms-add-test
--The module for adding Test
+-The module for adding and Assign Test
 
--done by jagadish761
+-done by jagadish746
 
 # otms-update-and-delete-test
 -The module for updating and deleting Test
