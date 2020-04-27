@@ -7,34 +7,31 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Set;
 
-public class Test {
-	private BigInteger testId;  
-	private String testTitle;  
-	private LocalTime testDuration;  
-	private Set<Question> testQuestions; 
-	private BigDecimal testTotalMarks;
-	private BigDecimal testMarksScored;
-	private Question currentQuestion; 
-	private LocalDateTime startTime;
-	private LocalDateTime endTime;
-	public Test(BigInteger testId, String testTitle, LocalTime testDuration, Set<Question> testQuestions,
-			BigDecimal testTotalMarks, BigDecimal testMarksScored, Question currentQuestion, LocalDateTime startTime,
-			LocalDateTime endTime) {
-		super();
-		this.testId = testId;
-		this.testTitle = testTitle;
-		this.testDuration = testDuration;
-		this.testQuestions = testQuestions;
-		this.testTotalMarks = testTotalMarks;
-		this.testMarksScored = testMarksScored;
-		this.currentQuestion = currentQuestion;
-		this.startTime = startTime;
-		this.endTime = endTime;
-	}
-	public BigInteger getTestId() {
+
+@Entity
+@Table(name="Test_info")
+public class Test{
+	
+	@Id
+	
+	
+	
+	private int testId;
+	private String testTitle; 
+	private String testDuration; 
+	private String testQuestion;
+	private int testQuestions;
+	private double  testTotalMarks ;
+	private double testMarksScored ;
+	private String startTime ;
+	private String endTime ;
+	
+	
+	
+	public int getTestId() {
 		return testId;
 	}
-	public void setTestId(BigInteger testId) {
+	public void setTestId(int testId) {
 		this.testId = testId;
 	}
 	public String getTestTitle() {
@@ -43,46 +40,55 @@ public class Test {
 	public void setTestTitle(String testTitle) {
 		this.testTitle = testTitle;
 	}
-	public LocalTime getTestDuration() {
+	public String getTestDuration() {
 		return testDuration;
 	}
-	public void setTestDuration(LocalTime testDuration) {
+	public void setTestDuration(String testDuration) {
 		this.testDuration = testDuration;
 	}
-	public Set<Question> getTestQuestions() {
+	public String getTestQuestion() {
+		return testQuestion;
+	}
+	public void setTestQuestion(String testQuestion) {
+		this.testQuestion = testQuestion;
+	}
+	public int getTestQuestions() {
 		return testQuestions;
 	}
-	public void setTestQuestions(Set<Question> testQuestions) {
+	public void setTestQuestions(int testQuestions) {
 		this.testQuestions = testQuestions;
 	}
-	public BigDecimal getTestTotalMarks() {
+	public double getTestTotalMarks() {
 		return testTotalMarks;
 	}
-	public void setTestTotalMarks(BigDecimal testTotalMarks) {
+	public void setTestTotalMarks(double testTotalMarks) {
 		this.testTotalMarks = testTotalMarks;
 	}
-	public BigDecimal getTestMarksScored() {
+	public double getTestMarksScored() {
 		return testMarksScored;
 	}
-	public void setTestMarksScored(BigDecimal testMarksScored) {
+	public void setTestMarksScored(double testMarksScored) {
 		this.testMarksScored = testMarksScored;
 	}
-	public Question getCurrentQuestion() {
-		return currentQuestion;
-	}
-	public void setCurrentQuestion(Question currentQuestion) {
-		this.currentQuestion = currentQuestion;
-	}
-	public LocalDateTime getStartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(LocalDateTime startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
-	public LocalDateTime getEndTime() {
+	public String getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(LocalDateTime endTime) {
+	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
+	@Override
+	public String toString() {
+		return "TestBean [testId=" + testId + ", testTitle=" + testTitle + ", testDuration=" + testDuration
+				+ ", testQuestion=" + testQuestion + ", testQuestions=" + testQuestions + ", testTotalMarks="
+				+ testTotalMarks + ", testMarksScored=" + testMarksScored + ", startTime=" + startTime + ", endTime="
+				+ endTime + "]";
+	}
+	
+
 }
