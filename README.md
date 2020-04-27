@@ -15,7 +15,7 @@
 
 -done by Saisumani
 
-# otms-update-and-delete-test
+# otms-user
 -The module for user
 
 -done by Gorthivani
