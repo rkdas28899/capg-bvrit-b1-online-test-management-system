@@ -39,6 +39,9 @@ public class TestMangementServiceImpl implements ITestManagementService {
 	@Transactional
 	public Test addTest(Test test) {
 		
+		if(repo.existsById(test.getTestId())) {
+			throw new RuntimeException("Test Already Exists");
+		}
 		return repo.save(test);
 	}
 	
