@@ -1,57 +1,88 @@
 package com.capg.otms.addandassigntest.model;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
+import java.util.List;
 
-public class Question{
-	private BigInteger questionId;
-	private ArrayList<String> questionOptions;
+public class Question {
+
+	private long questionId;
+	private List<String> questionOptions;
 	private String questionTitle;
-	private Integer questionAnswer;
-	private BigDecimal questionMarks;
-	private Integer chosenAnswer;
-	private BigDecimal marksScored;
-	public BigInteger getQuestionId() {
+	private int questionAnswer;
+	private double questionMarks;
+	private int chosenAnswer;
+	private double marksScored;
+	
+	public Question() { }
+
+	public Question(long questionId, List<String> questionOptions, String questionTitle, int questionAnswer,
+			double questionMarks, int chosenAnswer, double marksScored) {
+		super();
+		this.questionId = questionId;
+		this.questionOptions = questionOptions;
+		this.questionTitle = questionTitle;
+		this.questionAnswer = questionAnswer;
+		this.questionMarks = questionMarks;
+		this.chosenAnswer = chosenAnswer;
+		this.marksScored = marksScored;
+	}
+
+	public long getQuestionId() {
 		return questionId;
 	}
-	public void setQuestionId(BigInteger questionId) {
+
+	public void setQuestionId(long questionId) {
 		this.questionId = questionId;
 	}
-	public ArrayList<String> getQuestionOptions() {
+
+	public List<String> getQuestionOptions() {
 		return questionOptions;
 	}
-	public void setQuestionOptions(ArrayList<String> questionOptions) {
+
+	public void setQuestionOptions(List<String> questionOptions) {
 		this.questionOptions = questionOptions;
 	}
+
 	public String getQuestionTitle() {
 		return questionTitle;
 	}
+
 	public void setQuestionTitle(String questionTitle) {
 		this.questionTitle = questionTitle;
 	}
-	public Integer getQuestionAnswer() {
+
+	public int getQuestionAnswer() {
 		return questionAnswer;
 	}
-	public void setQuestionAnswer(Integer questionAnswer) {
+
+	public void setQuestionAnswer(int questionAnswer) {
 		this.questionAnswer = questionAnswer;
 	}
-	public BigDecimal getQuestionMarks() {
+
+	public double getQuestionMarks() {
 		return questionMarks;
 	}
-	public void setQuestionMarks(BigDecimal questionMarks) {
+
+	public void setQuestionMarks(double questionMarks) {
 		this.questionMarks = questionMarks;
 	}
-	public Integer getChosenAnswer() {
+
+	public int getChosenAnswer() {
 		return chosenAnswer;
 	}
-	public void setChosenAnswer(Integer chosenAnswer) {
+
+	public void setChosenAnswer(int chosenAnswer) {
 		this.chosenAnswer = chosenAnswer;
 	}
-	public BigDecimal getMarksScored() {
+
+	public double getMarksScored() {
 		return marksScored;
 	}
-	public void setMarksScored(BigDecimal marksScored) {
+
+	public void setMarksScored(double marksScored) {
 		this.marksScored = marksScored;
 	}
+	
+	
+	
+	
 }
