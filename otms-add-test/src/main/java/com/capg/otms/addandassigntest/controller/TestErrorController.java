@@ -24,10 +24,5 @@ public class TestErrorController {
 		
 	}
 	
-	
-//	@ExceptionHandler({ArithmeticException.class,ArrayIndexOutOfBoundsException.class})
-//	@ResponseStatus(value = HttpStatus.BAD_REQUEST,reason = "Values are invalid")
-//	public void handleCommonException() {
-//		
-//	}
+
 }

@@ -36,7 +36,7 @@ public class TestManagementController {
 	public void init() {
 	Set<Long> questions=new HashSet<>();
 	questions.addAll(Arrays.asList(501L,304L,521L));
-	Test test=new Test(106L, "Java Test", LocalTime.of(1, 30),questions , 100, 0, 1L, LocalDateTime.of(2020, 05,2, 14, 0), LocalDateTime.of(2020, 05,2, 15, 30));
+	Test test=new Test(107L, "Java Test", LocalTime.of(1, 30),questions , 100, 0, 1L, LocalDateTime.of(2020, 05,2, 14, 0), LocalDateTime.of(2020, 05,2, 15, 30));
 	service.addTest(test);
 	}
 	
@@ -71,10 +71,6 @@ public class TestManagementController {
 		return new ResponseEntity(HttpStatus.BAD_REQUEST);
 	}
 	
-//	@GetMapping("/user/id/{userId}")
-//	public ResponseEntity<User> getUserStatus(@PathVariable long userId){
-//		User user=service.getUserStatus(userId);
-//		return new ResponseEntity<User>(user,HttpStatus.OK);
-//	}
+
 	
 }

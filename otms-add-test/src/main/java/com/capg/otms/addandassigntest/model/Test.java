@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "test_info")
@@ -18,13 +19,16 @@ public class Test {
 	@Id
 	private long testId; 
 	private String testTitle;
+	@DateTimeFormat(pattern="hh:mm:ss")
 	private LocalTime testDuration;
 	@ElementCollection
 	private Set<Long> testQuestions;
 	private double testTotalMarks;
 	private double testMarksScored;
 	private long currentQuestion;
+	@DateTimeFormat(pattern="yyyy/MM/ddThh:mm:ss")
 	private LocalDateTime startTime;
+	@DateTimeFormat(pattern="yyyy/MM/ddThh:mm:ss")
 	private LocalDateTime endTime;
 		
 	

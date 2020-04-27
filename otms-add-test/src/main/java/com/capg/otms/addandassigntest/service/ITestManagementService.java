@@ -12,5 +12,5 @@ public interface ITestManagementService {
 	public Test getTest(long testId);
 	public List<Test> getAllTests();
 	public boolean assignTest(long testId);
-	//public User getUserStatus(long userId);
+
 }
