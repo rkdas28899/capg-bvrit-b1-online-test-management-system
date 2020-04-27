@@ -9,16 +9,16 @@ import org.springframework.stereotype.Service;
 
 import com.capg.otms.updateanddeletetest.exception.TestNotFoundException;
 import com.capg.otms.updateanddeletetest.model.Test;
-import com.capg.otms.updateanddeletetest.repository.TestJpaRepo;
+import com.capg.otms.updateanddeletetest.repository.ITestJpaRepo;
 
 @Service
-public class TestService implements TestServiceImp{
+public class TestService implements ITestServiceImp{
 
 //	@Autowired
 //	UserRepo repo;
 	
 	@Autowired(required = true)
-	TestJpaRepo testRepo;
+	ITestJpaRepo testRepo;
 	
 	@Override
 	public List<Test> fetchAllTests(){	
@@ -34,21 +34,15 @@ public class TestService implements TestServiceImp{
 	}
 
   @Override
-  @Transactional
+ @Transactional
   public Test addtest (Test test) {
 	  System.out.println(test);
 	  if(testRepo.existsById(test.getTestId())) {
-		  throw new RuntimeException("Test Already Exits");
+		 throw new RuntimeException("Test Already Exits");
 	  }
-	  return testRepo.save(test);
-  }
-	  
+	 return testRepo.save(test);
+  }	
   
-
-	
-	
-	
-	
 	@Override
 	@Transactional
 	public Test deleteTest(long testId) {
@@ -58,9 +52,6 @@ public class TestService implements TestServiceImp{
 		testRepo.deleteById(testId);
 		return deletedTest;
 	}
-
-
-
 	@Transactional
 	public Test updateTest(Test newTestData) {
 		Test test=testRepo.getOne(newTestData.getTestId());		

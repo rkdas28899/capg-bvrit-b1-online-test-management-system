@@ -6,7 +6,7 @@ import com.capg.otms.updateanddeletetest.model.Test;
 
 
 
-public interface TestServiceImp {
+public interface ITestServiceImp {
 	
 		
 		public Test addtest(Test test);

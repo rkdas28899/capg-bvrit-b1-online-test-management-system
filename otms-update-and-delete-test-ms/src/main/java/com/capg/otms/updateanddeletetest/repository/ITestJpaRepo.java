@@ -9,6 +9,6 @@ import com.capg.otms.updateanddeletetest.model.Test;
 
 
 @Repository
-public interface TestJpaRepo extends JpaRepository<Test, Long>{
+public interface ITestJpaRepo extends JpaRepository<Test, Long>{
 
 }
