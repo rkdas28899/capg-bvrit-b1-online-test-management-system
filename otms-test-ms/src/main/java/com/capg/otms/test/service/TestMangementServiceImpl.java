@@ -30,7 +30,7 @@ public class TestMangementServiceImpl implements ITestManagementService {
 	@Override
 	public Test updateTest(Test test) {
 		// TODO Auto-generated method stub
-		return null;
+		return repo.save(test);
 	}
 
 	@Override

@@ -1,8 +1,7 @@
-package com.capg.otms.test.model;
+package com.capg.otms.users.model;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.ElementCollection;
@@ -10,38 +9,23 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Table(name = "test_info")
 public class Test {
 
-	@Id
+
 	private long testId; 
 	private String testTitle;
-	
-	@DateTimeFormat(pattern = "hh:mm:ss")
 	private LocalTime testDuration;
-	
-	@ElementCollection
-	private Set<Long> testQuestions=new HashSet<>();
-	
+
+	private Set<Long> testQuestions;
 	private double testTotalMarks;
 	private double testMarksScored;
 	private long currentQuestion;
-	
-	@DateTimeFormat(pattern = "yyyy/MM/ddThh:mm:ss")
 	private LocalDateTime startTime;
-	
-	@DateTimeFormat(pattern = "yyyy/MM/ddThh:mm:ss")
 	private LocalDateTime endTime;
-		
 	
 	
 	public Test() {}
-	
-	
-	
 	
 
 	public Test(long testId, String testTitle, LocalTime testDuration, Set<Long> testQuestions, double testTotalMarks,
