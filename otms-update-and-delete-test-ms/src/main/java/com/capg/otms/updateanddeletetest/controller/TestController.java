@@ -38,7 +38,7 @@ public class TestController {
 	public void init() {
 	Set<Long> questions=new HashSet<>();
 	questions.addAll(Arrays.asList(501L,304L,521L));
-	Test test=new Test(106L, "html Test", LocalTime.of(1, 30),questions , 100, 0, 1L, LocalDateTime.of(2020, 05,2, 14, 0), LocalDateTime.of(2020, 05,2, 15, 30));
+	Test test=new Test(107L, "spring Test", LocalTime.of(1, 30),questions , 100, 0, 1L, LocalDateTime.of(2020, 05,2, 14, 0), LocalDateTime.of(2020, 05,2, 15, 30));
 	service.addtest(test);
 	}
 	
