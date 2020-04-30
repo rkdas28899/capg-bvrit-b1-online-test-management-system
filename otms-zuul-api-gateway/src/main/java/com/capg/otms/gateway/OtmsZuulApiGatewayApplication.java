@@ -1,15 +1,17 @@
-package com.capg.otms.test;
+package com.capg.otms.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
+@EnableZuulProxy
 @EnableEurekaClient
-public class OtmsTestMsApplication {
+public class OtmsZuulApiGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OtmsTestMsApplication.class, args);
+		SpringApplication.run(OtmsZuulApiGatewayApplication.class, args);
 	}
 
 }

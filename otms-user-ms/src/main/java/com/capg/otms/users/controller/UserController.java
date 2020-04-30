@@ -17,16 +17,17 @@ import com.capg.otms.users.model.User;
 import com.capg.otms.users.service.IUserService;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 	@Autowired
 	IUserService service;
 	
-	@PostMapping("/users/add")
+	@PostMapping("/add")
 	public User addUser(@RequestBody User user){
 		return service.addUser(user);
 	}
 	
-	@GetMapping("/users/user-id/{userId}")
+	@GetMapping("/user-id/{userId}")
 	public User getUser(@PathVariable long userId) {
 		return service.getUser(userId);
 	}
@@ -42,4 +43,16 @@ public class UserController {
 	{
 		return service.addQuestions(testId, question);
 	}
-}
+	@GetMapping("/message")
+	public String getMessage() {
+		return "Hello All";
+		}
+//	@GetMapping("admin/message")
+//	public String getAdminMessage() {
+//		return "Hello Admin";
+//		}
+//	@GetMapping("secure/message")
+//	public String getPrivateMessage() {
+//		return "Hello Users";
+//		}
+	}

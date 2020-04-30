@@ -27,14 +27,15 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Test addTest(Test test) {
 		// TODO Auto-generated method stub
-		return rt.postForObject("http://localhost:8020/test/add", test, Test.class);
+		return rt.postForObject("http://test-ms/test/add", test, Test.class);
 	}
 
 	@Override
 	public Question addQuestions(long testId, Question question) throws RestClientException, URISyntaxException {
 		// TODO Auto-generated method stub
-		Question q=rt.postForObject("http://localhost:8030/questions/add", question, Question.class);
-		rt.put(new URI("http://localhost:8020/test/assign/"+testId+"/question/"+q.getQuestionId()),null);
+		Question q=rt.postForObject("question-ms/questions/add", question, Question.class);
+		//rt.put(new URI("test-ms/test/assign/"+testId+"/question/"+q.getQuestionId()),null);
+		rt.put("test-ms/test/assign/"+testId+"/question/"+q.getQuestionId(),q,q);
 		return q;
 	}
 
@@ -46,6 +47,7 @@ public class UserServiceImpl implements IUserService {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
 		user.setUserTest(testId);
+	
 		return true;
 		
 	}
