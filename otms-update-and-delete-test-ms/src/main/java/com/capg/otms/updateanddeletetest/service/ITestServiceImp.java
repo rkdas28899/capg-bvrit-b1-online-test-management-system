@@ -14,7 +14,7 @@ public interface ITestServiceImp {
 		public Test deleteTest(long testId);
 		
 		public List<Test> fetchAllTests();
-
+		public boolean assignTest(long testId);
 	}
 
 

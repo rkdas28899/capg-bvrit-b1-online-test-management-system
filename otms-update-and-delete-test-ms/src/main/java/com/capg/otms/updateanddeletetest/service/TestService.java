@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.capg.otms.updateanddeletetest.exception.TestNotFoundException;
 import com.capg.otms.updateanddeletetest.model.Test;
+import com.capg.otms.updateanddeletetest.model.User;
 import com.capg.otms.updateanddeletetest.repository.ITestJpaRepo;
 
 @Service
@@ -19,6 +20,8 @@ public class TestService implements ITestServiceImp{
 	
 	@Autowired(required = true)
 	ITestJpaRepo testRepo;
+	
+	User user= new User(1022,"Sumani",null,false,"password");
 	
 	@Override
 	public List<Test> fetchAllTests(){	
@@ -52,6 +55,22 @@ public class TestService implements ITestServiceImp{
 		testRepo.deleteById(testId);
 		return deletedTest;
 	}
+	
+	@Override
+	public boolean assignTest(long testId) {
+		
+		boolean assignedTest =testRepo.existsById(testId);
+		if(assignedTest) {
+			Test test = testRepo.getOne(testId);
+			if(user.isAdmin()==false) {
+			user.setUserTest(test);
+			return true;
+			}
+		}
+		return false;
+	}
+	
+	
 	@Transactional
 	public Test updateTest(Test newTestData) {
 		Test test=testRepo.getOne(newTestData.getTestId());		
@@ -68,3 +87,5 @@ public class TestService implements ITestServiceImp{
 
 }
 }
+
+

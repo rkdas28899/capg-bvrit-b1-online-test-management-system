@@ -58,6 +58,15 @@ public class TestController {
 		Test newTest=service.updateTest(test);
 		return new ResponseEntity<Test>(test,HttpStatus.OK);
 	}
+
+	@PutMapping("/assign/{testId}")
+	public ResponseEntity assignTest(@PathVariable long testId){
+		boolean status = service.assignTest(testId);
+		if(status) {
+			return new ResponseEntity(HttpStatus.OK);
+		}
+		return new ResponseEntity(HttpStatus.BAD_REQUEST);
+	}
 	
 	
 	@DeleteMapping("/id/{testId}")
