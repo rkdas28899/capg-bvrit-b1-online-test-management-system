@@ -62,10 +62,10 @@ public class TestService implements ITestServiceImp{
 		boolean assignedTest =testRepo.existsById(testId);
 		if(assignedTest) {
 			Test test = testRepo.getOne(testId);
-			if(user.isAdmin()==false) {
+			//if(user.isAdmin()==false) {
 			user.setUserTest(test);
 			return true;
-			}
+			
 		}
 		return false;
 	}
