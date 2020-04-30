@@ -14,3 +14,8 @@
 -The module for updating and deleting Test
 
 -done by Saisumani
+
+# otms-user
+-The module for user
+
+-done by Gorthivani

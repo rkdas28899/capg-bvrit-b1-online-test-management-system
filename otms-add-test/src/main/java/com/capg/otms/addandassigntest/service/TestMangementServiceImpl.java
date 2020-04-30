@@ -52,7 +52,7 @@ public class TestMangementServiceImpl implements ITestManagementService {
 
 	@Override
 	public boolean assignTest(long testId) {
-		// TODO Auto-generated method stub
+	
 		boolean assignedTest = repo.existsById(testId);
 		if(assignedTest) {
 			Test test = repo.getOne(testId);
@@ -64,13 +64,7 @@ public class TestMangementServiceImpl implements ITestManagementService {
 		return false;
 	}
 	
-//	@Override
-//	public User getUserStatus(long userId) {
-//		if(user.getUserId()!=userId) {
-//			return null;
-//		}
-//		return user;
-//	}
+
 
 }
 
