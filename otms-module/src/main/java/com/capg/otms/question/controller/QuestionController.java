@@ -47,7 +47,7 @@ public class QuestionController {
 		return new ResponseEntity<Question>(question,HttpStatus.OK);	
 	}
 		
-	@DeleteMapping("/id/{questionId}")
+	@DeleteMapping("/delete/id/{questionId}")
 	public ResponseEntity<Question> deleteQuestion(@PathVariable long questionId) {
 		Question deleted = service.deleteQuestion(questionId);
 		if(deleted.getQuestionId()==questionId)
