@@ -21,14 +21,15 @@ public class TestService implements ITestServiceImp{
 	@Autowired(required = true)
 	ITestJpaRepo testRepo;
 	
-	User user= new User(1022,"Sumani",null,false,"password");
+	//User user= new User(1022,"Sumani",null,false,"password");
 	
 	@Override
 	public List<Test> fetchAllTests(){	
 		return testRepo.findAll();
 	}
 	
-	public Test getUser(long testId) {
+	@Override
+	public Test getTest(long testId) {
 		
 		if(!testRepo.existsById(testId)) {
 			throw new TestNotFoundException("Test with id : ["+testId+"] Not Found"); 
@@ -63,7 +64,7 @@ public class TestService implements ITestServiceImp{
 		if(assignedTest) {
 			Test test = testRepo.getOne(testId);
 			//if(user.isAdmin()==false) {
-			user.setUserTest(test);
+			//user.setUserTest(test);
 			return true;
 			
 		}

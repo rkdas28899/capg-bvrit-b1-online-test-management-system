@@ -12,7 +12,7 @@ public interface ITestServiceImp {
 		public Test addtest(Test test);
 		public Test updateTest(Test test);
 		public Test deleteTest(long testId);
-		
+		public Test getTest(long testId);
 		public List<Test> fetchAllTests();
 		public boolean assignTest(long testId);
 	}

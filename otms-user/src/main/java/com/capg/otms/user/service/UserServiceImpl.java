@@ -34,7 +34,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Question addQuestions(long testId, Question question) throws RestClientException, URISyntaxException {
 		// TODO Auto-generated method stub
-		Question q=rt.postForObject("http://localhost:8030/questions/add", question, Question.class);
+		Question q=rt.postForObject("http://localhost:8030/question/add", question, Question.class);
 		rt.put(new URI("http://localhost:8020/test/assign/"+testId+"/question/"+q.getQuestionId()),null);
 		return q;
 	}
@@ -84,16 +84,16 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Test deleteTest(long testId) throws RestClientException, URISyntaxException {
 		// TODO Auto-generated method stub
-		Test test = rt.getForObject("http://localhost:8020/test/test-id"+testId,Test.class);
-		rt.delete(new URI("http://localhost:8020/test/test-id"+testId));
+		Test test = rt.getForObject("http://localhost:8020/test/id/"+testId,Test.class);
+		//test = rt.postForObject("http://localhost:8020/test/delete/id/", test, Test.class);
+		rt.delete(new URI("http://localhost:8020/test/delete/id/"+testId));
 		return test;
 	}
-
 	@Override
 	public Test updateTest(Test test) throws RestClientException, URISyntaxException {
 		// TODO Auto-generated method stub
 		if(test!=null) {
-			rt.put(new URI("http://localhost:8020/test/update"), test);
+			rt.put(new URI("http://localhost:8020/test/update/"), test);
 		}
 		return test;
 	}
@@ -101,7 +101,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Question updateQuestions(long testId, Question question) {
 		// TODO Auto-generated method stub
-		Test test = rt.getForObject("http://localhost:8020/test/test-id"+testId,Test.class);
+		Test test = rt.getForObject("http://localhost:8020/test/test-id/"+testId,Test.class);
 		if(test!=null) {
 			test.setCurrentQuestion(question.getQuestionId());
 		}
