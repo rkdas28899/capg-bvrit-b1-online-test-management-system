@@ -101,7 +101,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Question updateQuestions(long testId, Question question) {
 		// TODO Auto-generated method stub
-		Test test = rt.getForObject("http://localhost:8020/test/test-id/"+testId,Test.class);
+		Test test = rt.getForObject("http://localhost:8020/test/id/"+testId,Test.class);
 		if(test!=null) {
 			test.setCurrentQuestion(question.getQuestionId());
 		}
@@ -111,9 +111,9 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Question deleteQuestions(long testId, Question question) throws RestClientException, URISyntaxException {
 		// TODO Auto-generated method stub
-		Test test = rt.getForObject("http://localhost:8020/test/test-id"+testId,Test.class);
+		Test test = rt.getForObject("http://localhost:8020/test/id/"+testId,Test.class);
 		if(test!=null) {
-			rt.delete(new URI("http://localhost:8030/questions/id/"+question.getQuestionId()));
+			rt.delete(new URI("http://localhost:8030/question/delete/id/"+question.getQuestionId()));
 		}
 		return question;
 	}

@@ -70,13 +70,13 @@ public class UserController {
 		return service.addQuestions(testId, question);
 	}
 	
-	@PutMapping("/add/question/test-id/{testId}")
+	@PutMapping("/update/question/test-id/{testId}")
 	public Question updateQuestion(@PathVariable long testId, @RequestBody Question question) throws RestClientException, URISyntaxException
 	{
 		return service.updateQuestions(testId, question);
 	}
 	
-	@DeleteMapping("/add/question/test-id/{testId}")
+	@DeleteMapping("/delete/question/test-id/{testId}")
 	public Question deleteQuestion(@PathVariable long testId, @RequestBody Question question) throws RestClientException, URISyntaxException
 	{
 		return service.deleteQuestions(testId, question);
