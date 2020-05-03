@@ -2,6 +2,8 @@ package com.capg.otms.users.controller;
 
 import java.net.URISyntaxException;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,14 @@ import com.capg.otms.users.service.IUserService;
 public class UserController {
 	@Autowired
 	IUserService service;
+	
+	
+	
+	@PostConstruct
+	public void addDummyUser() {
+		User user=new User(101452641L,"ramanuj",1011102L,true,"password");
+		service.addUser(user);
+	}
 	
 	@PostMapping("/add")
 	public User addUser(@RequestBody User user){
@@ -47,12 +57,19 @@ public class UserController {
 	public String getMessage() {
 		return "Hello All";
 		}
-//	@GetMapping("admin/message")
-//	public String getAdminMessage() {
-//		return "Hello Admin";
-//		}
+	
+	@GetMapping("/user-name/{userName}")
+	public User getUserByName(@PathVariable String userName) {
+		return service.getUserByName(userName);
+	}
+	
+	
+	
 //	@GetMapping("secure/message")
 //	public String getPrivateMessage() {
 //		return "Hello Users";
 //		}
+	
+	
+	
 	}

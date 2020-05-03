@@ -19,5 +19,5 @@ public interface IUserService {
 	User deleteUser(long userId);
 	User updateUser(User user);
 	User getUser(long userId);
-	
+	User getUserByName(String userName);
 }

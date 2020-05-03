@@ -1,25 +1,20 @@
-package com.capg.otms.users.model;
+package com.capg.otms.gateway.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "user_details")
-public class User {
 
-	@Id
+public class UserInfo {
+
 	private long userId ;
 	private String userName ;
 	private long userTest ;
 	private boolean isAdmin ;
 	private String userPassword;
 	
-	public User() { }
+	public UserInfo() { }
 	
 	
 
-	public User(long userId, String userName, long userTest, boolean isAdmin, String userPassword) {
+	public UserInfo(long userId, String userName, long userTest, boolean isAdmin, String userPassword) {
 		super();
 		this.userId = userId;
 		this.userName = userName;

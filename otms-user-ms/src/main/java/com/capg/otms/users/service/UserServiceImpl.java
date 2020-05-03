@@ -75,5 +75,12 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return repo.getOne(userId);
 		}
+	
+	@Override
+	public User getUserByName(String userName) {
+		// TODO Auto-generated method stub
+		return repo.getByUserName(userName);
+		}
+	
 
 }

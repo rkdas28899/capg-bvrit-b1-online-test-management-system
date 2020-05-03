@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.capg.otms.users.model.User;
 
 public interface IUserRepo extends JpaRepository<User, Long> {
-
+	
+	public User getByUserName(String userName);
 }
