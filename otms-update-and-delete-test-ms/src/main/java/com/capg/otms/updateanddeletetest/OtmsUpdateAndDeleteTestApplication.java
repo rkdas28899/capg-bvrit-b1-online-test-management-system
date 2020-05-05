@@ -11,5 +11,9 @@ public class OtmsUpdateAndDeleteTestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OtmsUpdateAndDeleteTestApplication.class, args);
 	}
+	@Bean
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
 
 }
