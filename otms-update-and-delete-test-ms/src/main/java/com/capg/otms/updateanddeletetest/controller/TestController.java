@@ -95,6 +95,11 @@ public class TestController {
 	  return new ResponseEntity<Test>(HttpStatus.NOT_FOUND);
 	
 	}
+	@GetMapping("/calculate")
+	public ResponseEntity<Double> calculateTotalMarks(@RequestBody Test test){
+		double result=service.calculateTotalMarks(test);
+		return new ResponseEntity<Double>(result,HttpStatus.OK);
+	}
 		
 	
 }
