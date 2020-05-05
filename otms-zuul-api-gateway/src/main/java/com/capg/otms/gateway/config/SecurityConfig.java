@@ -16,7 +16,7 @@ import com.capg.otms.gateway.service.MyUserDetailsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private MyUserDetailsService userDetailsService;
+	private UserDetailsService userDetailsService;
 
 
 
@@ -26,30 +26,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		}
 	
 	
-	
 //	@Override
 //	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //		
 //		auth.inMemoryAuthentication()
-//			.withUser("gaurav")
+//			.withUser("ramanuj")
 //			.password("password")
 //			.roles("USER")
 //			.and()
-//			.withUser("harish")
-//			.password("12345")
-//			.roles("ADMIN");		
+//			.withUser("admin")
+//			.password("password")
+//			.roles("ADMIN"); 
 //	}
-////	
-//	
+	 
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/admin/**")
+			.antMatchers("/admin/message")
 			.hasRole("ADMIN")
-			.antMatchers("/secure/**")
+			.antMatchers("user/**")
 			.hasAnyRole("ADMIN","USER")
-			.antMatchers("/public/**")
-			
+			.antMatchers("public/**")
 			.permitAll()
 			.and()
 			.formLogin();

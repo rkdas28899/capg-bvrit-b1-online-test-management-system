@@ -30,45 +30,47 @@ public class UserController {
 	public void addDummyUser() {
 		User user=new User(101452641L,"ramanuj",1011102L,true,"password");
 		service.addUser(user);
+		User user1=new User(124513146L,"keerthi",1022112L,false,"abcd");
+		service.addUser(user1);
 	}
 	
-	@PostMapping("/add")
+	@PostMapping("/p/add")
 	public User addUser(@RequestBody User user){
 		return service.addUser(user);
 	}
 	
-	@GetMapping("/user-id/{userId}")
+	@GetMapping("/p/user-id/{userId}")
 	public User getUser(@PathVariable long userId) {
 		return service.getUser(userId);
 	}
 	
 	
-	@PostMapping("/add/test")
+	@PostMapping("/a/add/test")
 	public Test addTest(@RequestBody Test test) {
 		return service.addTest(test);
 	}
 	
-	@PostMapping("/add/question/test-id/{testId}")
+	@PostMapping("/a/add/question/test-id/{testId}")
 	public Question addQuestion(@PathVariable long testId, @RequestBody Question question) throws RestClientException, URISyntaxException
 	{
 		return service.addQuestions(testId, question);
 	}
-	@GetMapping("/message")
+	@GetMapping("/a/message")
 	public String getMessage() {
-		return "Hello All";
+		return "Hello Admin";
 		}
 	
-	@GetMapping("/user-name/{userName}")
+	@GetMapping("/p/user-name/{userName}")
 	public User getUserByName(@PathVariable String userName) {
 		return service.getUserByName(userName);
 	}
 	
 	
 	
-//	@GetMapping("secure/message")
-//	public String getPrivateMessage() {
-//		return "Hello Users";
-//		}
+	@GetMapping("/u/message")
+	public String getPrivateMessage() {
+		return "Hello Users";
+		}
 	
 	
 	

@@ -25,10 +25,10 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		UserInfo userInfo = rt.getForObject("http://user-ms/users/user-name/"+userName, UserInfo.class);
-		String role=userInfo.isAdmin()?"ADMIN":"USER";
+		UserInfo userInfo = rt.getForObject("http://user-ms/users/p/user-name/"+userName, UserInfo.class);
+		String role=userInfo.isAdmin()?"ROLE_ADMIN":"ROLE_USER";
 		List<GrantedAuthority> authorities=Arrays.asList(new SimpleGrantedAuthority(role));
-		return new User(userName, userInfo.getUserPassword(), authorities);
+		return new User(userName, userInfo.getUserPassword(),authorities );
 	}
 	
 	
