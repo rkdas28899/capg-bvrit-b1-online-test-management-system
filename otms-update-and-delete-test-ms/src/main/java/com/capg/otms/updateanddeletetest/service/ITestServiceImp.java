@@ -15,6 +15,7 @@ public interface ITestServiceImp {
 		public Test getTest(long testId);
 		public List<Test> fetchAllTests();
 		public boolean assignTest(long testId);
+		public double calculateTotalMarks(Test test);
 	}
 
 
