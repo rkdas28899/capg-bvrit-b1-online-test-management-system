@@ -21,6 +21,11 @@ public class TestService implements ITestServiceImp{
 	@Autowired(required = true)
 	ITestJpaRepo testRepo;
 	
+	@Autowired
+	RestTemplate rt;
+	
+	double score;
+	
 	//User user= new User(1022,"Sumani",null,false,"password");
 	
 	@Override
@@ -86,7 +91,18 @@ public class TestService implements ITestServiceImp{
 		testRepo.save(test);
 		return test;
 
-}
+
+	}
+	@Override
+	public double calculateTotalMarks(Test test) {
+		// TODO Auto-generated method stub
+		List<Long> qIds = new ArrayList(test.getTestQuestions());
+		for(int i=0; i<qIds.size(); i++) {
+			Question q = rt.getForObject("http://localhost:8811/question/id/"+qIds.get(i), Question.class);
+			score = score+q.getMarksScored();
+		}
+		return score;
+	}
 }
 
 
