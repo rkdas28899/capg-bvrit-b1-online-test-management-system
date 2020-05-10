@@ -28,8 +28,6 @@ public class QuestionControllerTest extends OtmsModuleApplicationTests {
 	private MockMvc mockMvc;
 	@Autowired
 	QuestionServiceImpl service;
-	@Autowired
-	QuestionRepository daoImp;
 
 	@Before
 	public void setup() throws Exception {
