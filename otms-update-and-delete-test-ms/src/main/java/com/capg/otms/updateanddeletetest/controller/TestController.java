@@ -111,7 +111,6 @@ public class TestController {
 		double result=service.calculateTotalMarks(testId);
 		return new ResponseEntity<Double>(result,HttpStatus.OK);
 	}
-	
 		
 	
 }

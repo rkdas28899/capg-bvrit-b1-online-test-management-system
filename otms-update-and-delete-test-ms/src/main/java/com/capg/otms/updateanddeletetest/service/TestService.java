@@ -26,6 +26,8 @@ public class TestService implements ITestServiceImp{
 	
 	@Autowired
 	RestTemplate rt;
+	
+	double score;
 	//User user= new User(1022,"Sumani",null,false,"password");
 	
 	@Override
@@ -90,20 +92,7 @@ public class TestService implements ITestServiceImp{
 		test.setEndTime(newTestData.getEndTime());
 		testRepo.save(test);
 		return test;
-
 }
-	@Override
-	public double calculateTotalMarks(long testId) {
-		// TODO Auto-generated method stub
-		double score=0;
-		Test test = testRepo.getOne(testId);
-		List<Long> qIds = new ArrayList(test.getTestQuestions());
-		for(int i=0; i<qIds.size();i++) {
-			Question q = rt.getForObject("http://localhost:8030/question/id/"+qIds.get(i), Question.class);
-			score = score + q.getMarksScored();
-		}
-		return score;
-	}
 	
 	@Override
 	public List<Question> getTestQuestions(long testId) {
@@ -117,6 +106,19 @@ public class TestService implements ITestServiceImp{
 			//score = score + q.getMarksScored();
 		}
 		return questions;
+	}
+
+	@Override
+	public double calculateTotalMarks(long testId) {
+		// TODO Auto-generated method stub
+		double score=0;
+		Test test = testRepo.getOne(testId);
+		List<Long> qIds = new ArrayList(test.getTestQuestions());
+		for(int i=0; i<qIds.size();i++) {
+			Question q = rt.getForObject("http://localhost:8030/question/id/"+qIds.get(i), Question.class);
+			score = score + q.getMarksScored();
+		}
+		return score;
 	}
 }
 
