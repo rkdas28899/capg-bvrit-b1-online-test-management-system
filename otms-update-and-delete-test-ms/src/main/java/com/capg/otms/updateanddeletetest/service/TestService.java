@@ -1,13 +1,16 @@
 package com.capg.otms.updateanddeletetest.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.capg.otms.updateanddeletetest.exception.TestNotFoundException;
+import com.capg.otms.updateanddeletetest.model.Question;
 import com.capg.otms.updateanddeletetest.model.Test;
 import com.capg.otms.updateanddeletetest.model.User;
 import com.capg.otms.updateanddeletetest.repository.ITestJpaRepo;
@@ -21,6 +24,8 @@ public class TestService implements ITestServiceImp{
 	@Autowired(required = true)
 	ITestJpaRepo testRepo;
 	
+	@Autowired
+	RestTemplate rt;
 	//User user= new User(1022,"Sumani",null,false,"password");
 	
 	@Override
@@ -87,6 +92,32 @@ public class TestService implements ITestServiceImp{
 		return test;
 
 }
+	@Override
+	public double calculateTotalMarks(long testId) {
+		// TODO Auto-generated method stub
+		double score=0;
+		Test test = testRepo.getOne(testId);
+		List<Long> qIds = new ArrayList(test.getTestQuestions());
+		for(int i=0; i<qIds.size();i++) {
+			Question q = rt.getForObject("http://localhost:8030/question/id/"+qIds.get(i), Question.class);
+			score = score + q.getMarksScored();
+		}
+		return score;
+	}
+	
+	@Override
+	public List<Question> getTestQuestions(long testId) {
+		// TODO Auto-generated method stub
+		Test test = testRepo.getOne(testId);
+		List<Long> qIds = new ArrayList(test.getTestQuestions());
+		List<Question> questions = new ArrayList<>();
+		for(int i=0; i<qIds.size();i++) {
+			Question q = rt.getForObject("http://localhost:8030/question/id/"+qIds.get(i), Question.class);
+			questions.add(q);
+			//score = score + q.getMarksScored();
+		}
+		return questions;
+	}
 }
 
 

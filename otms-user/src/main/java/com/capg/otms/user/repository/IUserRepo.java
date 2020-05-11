@@ -6,4 +6,6 @@ import com.capg.otms.user.model.User;
 
 public interface IUserRepo extends JpaRepository<User, Long> {
 
+	User getByUserName(String userName);
+
 }

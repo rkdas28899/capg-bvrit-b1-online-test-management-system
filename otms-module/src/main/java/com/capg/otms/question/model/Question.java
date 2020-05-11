@@ -15,11 +15,23 @@ public class Question {
 	private List<String> questionOptions;
 	private String questionTitle;
 	private int questionAnswer;
-	private double questionMarks;
+	private double questionMarks=0.0;
 	private int chosenAnswer;
-	private double marksScored;
+	private double marksScored=0.0;
 	
 	public Question() { }
+	
+
+	public Question(long questionId, List<String> questionOptions, String questionTitle, int questionAnswer,
+			double questionMarks) {
+		super();
+		this.questionId = questionId;
+		this.questionOptions = questionOptions;
+		this.questionTitle = questionTitle;
+		this.questionAnswer = questionAnswer;
+		this.questionMarks = questionMarks;
+	}
+
 
 	public Question(long questionId, List<String> questionOptions, String questionTitle, int questionAnswer,
 			double questionMarks, int chosenAnswer, double marksScored) {

@@ -130,5 +130,11 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
+	
+	@Override
+	public User getUserByName(String userName) {
+		// TODO Auto-generated method stub
+		return repo.getByUserName(userName);
+		}
 
 }

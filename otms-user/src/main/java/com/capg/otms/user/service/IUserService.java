@@ -26,5 +26,6 @@ public interface IUserService {
 	User updateUser(User user);
 	User getUser(long userId);
 	List<User> getAllUsers();
+	User getUserByName(String userName);
 	
 }

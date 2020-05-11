@@ -7,17 +7,17 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Question{
-	private BigInteger questionId;
+	private long questionId;
 	private ArrayList<String> questionOptions;
 	private String questionTitle;
-	private Integer questionAnswer;
-	private BigDecimal questionMarks;
-	private Integer chosenAnswer;
-	private BigDecimal marksScored;
-	public BigInteger getQuestionId() {
+	private int questionAnswer;
+	private double questionMarks;
+	private int chosenAnswer;
+	private double marksScored;
+	public long getQuestionId() {
 		return questionId;
 	}
-	public void setQuestionId(BigInteger questionId) {
+	public void setQuestionId(long questionId) {
 		this.questionId = questionId;
 	}
 	public ArrayList<String> getQuestionOptions() {
@@ -32,30 +32,31 @@ public class Question{
 	public void setQuestionTitle(String questionTitle) {
 		this.questionTitle = questionTitle;
 	}
-	public Integer getQuestionAnswer() {
+	public int getQuestionAnswer() {
 		return questionAnswer;
 	}
-	public void setQuestionAnswer(Integer questionAnswer) {
+	public void setQuestionAnswer(int questionAnswer) {
 		this.questionAnswer = questionAnswer;
 	}
-	public BigDecimal getQuestionMarks() {
+	public double getQuestionMarks() {
 		return questionMarks;
 	}
-	public void setQuestionMarks(BigDecimal questionMarks) {
+	public void setQuestionMarks(double questionMarks) {
 		this.questionMarks = questionMarks;
 	}
-	public Integer getChosenAnswer() {
+	public int getChosenAnswer() {
 		return chosenAnswer;
 	}
-	public void setChosenAnswer(Integer chosenAnswer) {
+	public void setChosenAnswer(int chosenAnswer) {
 		this.chosenAnswer = chosenAnswer;
 	}
-	public BigDecimal getMarksScored() {
+	public double getMarksScored() {
 		return marksScored;
 	}
-	public void setMarksScored(BigDecimal marksScored) {
+	public void setMarksScored(double marksScored) {
 		this.marksScored = marksScored;
 	}
+	
 }
 
 

@@ -1,0 +1,10 @@
+com\capg\otms\question\service\QuestionServiceImpl.class
+com\capg\otms\question\repository\QuestionRepository.class
+com\capg\otms\question\controller\QuestionController.class
+com\capg\otms\question\model\Test.class
+com\capg\otms\question\controller\QuestionErrorController.class
+com\capg\otms\question\exception\QuestionNotFoundException.class
+com\capg\otms\question\model\User.class
+com\capg\otms\question\model\Question.class
+com\capg\otms\question\OtmsModuleApplication.class
+com\capg\otms\question\service\IQuestionService.class
