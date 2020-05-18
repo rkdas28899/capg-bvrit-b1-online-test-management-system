@@ -23,6 +23,11 @@
       		<artifactId>sonar-maven-plugin</artifactId>
         	<version>3.6.0.1398</version>
 	</dependency>
+	<dependency>
+	<groupId>org.sonarsource.scanner.maven</groupId>
+  		<artifactId>sonar-maven-plugin</artifactId>
+    	<version>3.6.0.1398</version>
+</dependency>
 	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 <dependency>
     <groupId>org.junit.jupiter</groupId>
@@ -58,12 +63,7 @@
     <version>11.2.0</version>
 </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

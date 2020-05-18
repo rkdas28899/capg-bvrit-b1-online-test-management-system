@@ -34,6 +34,17 @@ public class Test {
 	
 	public Test() {}
 	
+	
+	
+	public Test(long testId, String testTitle, LocalDateTime startTime, LocalDateTime endTime) {
+		super();
+		this.testId = testId;
+		this.testTitle = testTitle;
+		this.startTime = startTime;
+		this.endTime = endTime;
+	}
+
+
 
 	public Test(long testId, String testTitle, LocalTime testDuration, Set<Long> testQuestions, double testTotalMarks,
 			double testMarksScored, long currentQuestion, LocalDateTime startTime, LocalDateTime endTime) {
